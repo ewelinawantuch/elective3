@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Feb 21 20:38:27 2021
-
-@author: MACH
+@author: Nowak and Wantuch
 """
 #DEPENDENCIES
 import eng_to_ipa as ipa #to get IPA conversion
@@ -160,6 +158,7 @@ def regressive(word):
             break
         else:
             voicing = False
+            trouble = ''
         i += 1
     return voicing, trouble
 
@@ -207,7 +206,7 @@ while x != '6':
                 print('{0:<30}{1:<30}'.format(x, freq_dic[x]))
     if x=='3':
         print('-----------------------------------------------------------')
-        y = input('Check definition for word:')
+        y = input('Check definition for word: ')
         definitions = get_definition(y)
         for definition in definitions:
             print(definition)
@@ -226,7 +225,7 @@ while x != '6':
             print(score)
     if x=='5':
         print('-----------------------------------------------------------')
-        y = input('Check phonetic difficulty for word:')
+        y = input('Check phonetic difficulty for word: ')
         difficulty = phonetic_difficulty(y)
         voicing = regressive(y)
         print('Your word difficulty: ',difficulty)
