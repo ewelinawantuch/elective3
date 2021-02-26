@@ -101,12 +101,12 @@ def check_clusters(word):
     return is_there_cluster
 
 def homorganic(word):
-    dorsals = 'kŋgxw'
+    dor_lab_cor = 'kŋgxwpbfvmwtdsznlʧʤrj'    
     word = ipa.convert(word)
     print(word)
     i = 0
     for i in range(len(word)-1):
-        if word[i] in dorsals and word[i+1] in dorsals:
+        if word[i] in dor_lab_cor and word[i+1] in dor_lab_cor:
             homorganic = True
             break
         else:
@@ -139,7 +139,7 @@ def phonetic_difficulty(word):
         phon += 1
     if check_clusters(word_ipa) == True:
         phon += 1
-    if homorganic(word_ipa) == True:
+    if homorganic(word_ipa) == False:
         phon += 1
     return phon
 
